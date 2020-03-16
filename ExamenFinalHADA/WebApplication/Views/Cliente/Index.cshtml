@@ -8,9 +8,9 @@
     <h2>Lista Clientes</h2>
 
 <p>
-    @Html.ActionLink("Nuevo Cliente", "Agregar") ||
-    @Html.ActionLink("Registrar Atencion", "lis") ||
-    @Html.ActionLink("Lista Atencion", "jose")
+    @Html.ActionLink("Nuevo Cliente", "Create") ||
+    @Html.ActionLink("Registrar Atencion", "Create") ||
+    @Html.ActionLink("Lista Atencion", "Create")
 </p>
 <table class="table">
     <tr>
@@ -44,9 +44,9 @@
             @Html.DisplayFor(modelItem => item.NumDocumento)
         </td>
         <td>
-           @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }
