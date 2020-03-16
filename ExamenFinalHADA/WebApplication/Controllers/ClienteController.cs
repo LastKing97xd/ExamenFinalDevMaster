@@ -29,5 +29,41 @@ namespace WebApplication.Controllers
             }
             
         }
+
+        [HttpGet]
+        public ActionResult Agregar()
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Agregar(tbCliente clie)
+        {
+            
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            try
+            {
+                using (var db = new BD_ExamenFinalEntities())
+                {
+                    clie.Estado = "A";
+                    db.tbCliente.Add(clie);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("Error", ex.Message);
+                //throw;
+                return View();
+            }
+
+        }
     }
 }
